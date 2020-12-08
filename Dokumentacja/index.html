@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>EKG Grupa 1</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/shop-item.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">DADM-EKG-Grupa 1</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">O projekcie
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="moduly.html">Moduły</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="czlonkowie.html">Członkowie</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-3">
+            <h1 class="my-4">Moduły</h1>
+            <div class="list-group">
+                <a href="index.html" class="list-group-item active">Strona Główna</a>
+                <a href="ECG.html" class="list-group-item">ECG Baseline</a>
+                <a href="R_Peaks.html" class="list-group-item">R Peaks</a>
+                <a href="HRV1.html" class="list-group-item">HRV1</a>
+                <a href="HRV2.html" class="list-group-item">HRV2</a>
+                <a href="Waves.html" class="list-group-item">Waves</a>
+                <a href="ST_Segment.html" class="list-group-item">ST Segment</a>
+                <a href="T_Wave_Alt.html" class="list-group-item">T Wave Alt</a>
+                <a href="Heart_Class.html" class="list-group-item">Heart Class</a>
+            </div>
+        </div>
+        <!-- /.col-lg-3 -->
+
+        <div class="col-lg-9">
+
+            <div class="card mt-4">
+                <img class="card-img-top img-fluid" src="img/st_segment.png" alt="">
+                <div class="card-body">
+                    <h3 class="card-title">Dedykowane Algorytmy Diagnostyki Medycznej</h3>
+                    <h4>Cel i wprowadzenie do projektu</h4>
+                    <p class="card-text" style="text-align: justify">Projekt ten został zrealizowany w ramach przedmiotu
+                        “Dedykowane algorytmy diagnostyki medycznej”. Jego celem było stworzenie aplikacji analizującej
+                        sygnał EKG pozyskany z publicznych repozytoriów [1]. W ramach projektu zrealizowano osiem modułów,
+                        każdy odpowiedzialny za inną funkcjonalność: (1) ECG_BASELINE – filtracja sygnału, (2) R_PEAKS –
+                        detekcja załamków R, (3) WAVES – detekcja punktów charakterystycznych np. QRS-onset, QRS-end,
+                        (4) HRV1 - analiza czasowa i częstotliwościowa, (5) HRV2 – analiza geometryczna,
+                        (6) HEART_CLASS – kategoryzacja i klasyfikacja zespołów QRS, (7) ST_SEGMENT –
+                        analiza odcinka ST, (8) T_WAVE_ALT – oznaczanie załamków T, w których wykryto alternans.
+                        Aplikacja umożliwia wizualizację wyników wygenerowanych dzięki konkretnym modułom.</p>
+                </div>
+            </div>
+            <!-- /.card -->
+
+            <div class="card card-outline-secondary my-4">
+                <div class="card-header">
+                    Wymagania systemowe oraz zastosowane technologie
+                </div>
+                <div class="card-body">
+                    <p style="text-align: justify">Do realizacji projektu wybrano system operacyjny Linux (dystrybucja Ubuntu 20.04).
+                        Niniejszy projekt został napisany w języku C++ przy użyciu programu CLion 2020.2. Wykorzystano Cmake oraz kompilatory gcc i g++. Użyto następujących bibliotek:
+                    </p>
+                    <ul>
+                        <li>Qt5</li>
+                        <li>WFDB</li>
+                        <li>C++ Standard Library</li>
+                        <li>ALGLIB</li>
+                    </ul>
+                    <p style="text-align: justify">Biblioteki wykorzystywane przez poszczególne moduły wylistowane są w dokumentacji tychże modułów.</p>
+                </div>
+            </div>
+            <div class="card card-outline-secondary my-4">
+                <div class="card-header">
+                    Instalacja i uruchomienie aplikacji
+                </div>
+                <div class="card-body">
+                    <h6>Instalacja kompilatorów c i c++</h6>
+                    <p style="text-align: justify; font-family:courier">sudo apt-get install gcc g++</p>
+                </div>
+                <div class="card-body">
+                    <h6>Instalacja biblioteki WFDB</h6>
+                    <p>Należy pobrać i rozpakować źródło</p>
+                    <p style="text-align: justify; font-family:courier">curl https://physionet.org/physiotools/wfdb.tar.gz | tar xvz</p>
+                    <p>Następnie przejść do rozpakowanego folderu i skonfigurować paczkę</p>
+                    <p style="text-align: justify; font-family:courier">cd wfdb-10.m.n</p>
+                    <p style="text-align: justify; font-family:courier">./configure</p>
+                    <p>Następnym krokiem jest skompilowanie i instalacja paczki oraz przetestowanie paczki</p>
+                    <p style="text-align: justify; font-family:courier">make install</p>
+                    <p style="text-align: justify; font-family:courier">make check</p>
+                </div>
+                <div class="card-body">
+                    <h6>Instalacja biblioteki Qt5</h6>
+                    <p>Instalacja paczek libgl1-mesa-dev oraz build-essential:</p>
+                    <p style="text-align: justify; font-family:courier">sudo apt-get install build-essential libgl1-mesa-dev</p>
+                    <p>Pobranie pliku instalacyjnego ze strony http://download.qt.io/official_releases/online_installers/, a następnie przejście do katalogu, gdzie znajduje się pobrany plik i wpisanie komendy:</p>
+                    <p style="text-align: justify; font-family:courier">chmod a+x qt-unified-linux-x64-2.0.3-1-online.run</p>
+                    <p>Następnie należy uruchomić program instalujący:</p>
+                    <p style="text-align: justify; font-family:courier">sudo ./qt-unified-linux-x64-2.0.3-1-online.run</p>
+                    <p>I klikając “Next” dwukronie oraz “Install” zainstalować bibliotekę.</p>
+                </div>
+                <div class="card-body">
+                    <h6>Instalacja biblioteki ALGLIB</h6>
+                    <p>Wpisanie w terminalu komendy:</p>
+                    <p style="text-align: justify; font-family:courier">sudo apt-get install libalglib-dev</p>
+                </div>
+                <div class="card-body">
+                    <h6>Instalacja IDE</h6>
+                    <p>Pobranie pliku zip ze strony: https://www.jetbrains.com/clion/download/. Po wypakowaniu pliku przejście w terminalu do folderu bin:</p>
+                    <p style="text-align: justify; font-family:courier">~cd '/home/user/Programy/clion-2020.2.4/bin'</p>
+                    <p>i uruchomienie pliku clion.sh za pomocą komendy w terminalu:</p>
+                    <p style="text-align: justify; font-family:courier">~./clion.sh</p>
+                </div>
+            </div>
+
+            <!-- /.card -->
+
+        </div>
+        <!-- /.col-lg-9 -->
+
+    </div>
+
+</div>
+<!-- /.container -->
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+    </div>
+    <!-- /.container -->
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
